@@ -7,7 +7,7 @@ load_dotenv()
 
 import os
 
-from backend.core.config import( 
+from core.config import( 
     ALLOWED_ORIGINS, 
     APP_DESCRIPTION, 
     APP_TITLE, 
@@ -15,7 +15,7 @@ from backend.core.config import(
     SPACY_MODEL_PRIMARY, 
     SPACY_MODEL_SECONDARY, SENTENCE_TRANSFORMER_MODEL
 )
-from backend.api.routes import router
+from api.routes import router
 
 logger=logging.getLogger('ats_resume_scorer')
 
@@ -83,7 +83,7 @@ async def root():
 if __name__=='__main__':
     import uvicorn
     uvicorn.run(
-        'backend.main:app',
+        'main:app',
         host    = '0.0.0.0',
         port    = 8000,
         reload  = True,    # Auto-restart on code changes (dev only)
